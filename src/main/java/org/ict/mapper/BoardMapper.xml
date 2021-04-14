@@ -5,7 +5,19 @@
 
 <mapper namespace="org.ict.mapper.BoardMapper">
 	<select id="getList" resultType="org.ict.domain.BoardVO">
-		select * from preboard where bno > 0
+		select * from praboard where bno > 0
 	</select>
 	
+	 <select id="read" resultType="org.ict.domain.BoardVO">
+	 select * from praboard where bno = #{bno}
+	 
+	 </select>
+	
+	<insert id="insert">
+	insert into praboard(title, contents, writer) values(#{title}, #{contents}, #{writer})
+	</insert>
+	
+	<delete id="delete">
+	DELETE from praboard where bno = #{bno}
+	</delete>
 </mapper>

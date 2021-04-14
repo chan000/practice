@@ -17,5 +17,21 @@ public class BoardServiceImpl implements BoardService{
 	public List<BoardVO> list() {
 		return mapper.getList();
 	}
+
+	@Override
+	public BoardVO get(Long bno) {
+		return mapper.read(bno);
+	}
+
+	@Override
+	public void create(BoardVO board) {
+			mapper.insert(board);
+			
+	}
+
+	@Override
+	public boolean drop(Long bno) {
+		return mapper.delete(bno)==1;
+	}
 	
 }

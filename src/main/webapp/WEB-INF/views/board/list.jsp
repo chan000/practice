@@ -12,19 +12,17 @@
 		<tr>
 			<th>글번호</th>
 			<th>제목</th>
-			<th>내용</th>
-			<th>작성자</th>
 			<th>날짜</th>
 		</tr>
-			<c:forEach var="list" items="${list }">
-		<tr>
+		<c:forEach var="list" items="${list }">
+			<tr>
 				<td>${list.bno}</td>
-				<td>${list.title}</td>
-				<td>${list.writer}</td>
-				<td>${list.contents}</td>
+				<td><a href="/board/get?bno=${list.bno}">${list.title}</a></td>
 				<td>${list.updatedate}</td>
-		</tr>
-			</c:forEach>
+			</tr>
+		</c:forEach>
 	</table>
+	<a class="btn btn-primary"
+	href="/board/register">게시글 추가</a>
 </body>
 </html>
