@@ -5,13 +5,12 @@ import java.util.List;
 import org.ict.domain.BoardVO;
 
 public interface BoardService {
+
+	public List<BoardVO> get();
 	
-	public List<BoardVO> list();
+	public BoardVO read(int bno);
 	
-	public BoardVO get(Long bno);
+	public String add(BoardVO board);
 	
-	public void create(BoardVO board);
-	
-	public boolean drop(Long bno);
-	
+	public int remove(int bno);
 }

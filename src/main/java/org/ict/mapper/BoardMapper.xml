@@ -2,22 +2,20 @@
 <!DOCTYPE mapper 
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
 <mapper namespace="org.ict.mapper.BoardMapper">
 	<select id="getList" resultType="org.ict.domain.BoardVO">
 		select * from praboard where bno > 0
 	</select>
 	
-	 <select id="read" resultType="org.ict.domain.BoardVO">
-	 select * from praboard where bno = #{bno}
-	 
-	 </select>
+	<select id="read" resultType="org.ict.domain.BoardVO">
+		select * from praboard where bno = #{bno}
+	</select>
 	
 	<insert id="insert">
-	insert into praboard(title, contents, writer) values(#{title}, #{contents}, #{writer})
+		insert into praboard(title, contents, writer) values(#{title}, #{contents}, #{writer})
 	</insert>
 	
-	<delete id="delete">
-	DELETE from praboard where bno = #{bno}
+	<delete id="remove">
+		delete from praboard where bno = #{bno}
 	</delete>
 </mapper>

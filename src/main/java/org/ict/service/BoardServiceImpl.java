@@ -8,30 +8,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BoardServiceImpl implements BoardService{
+public class BoardServiceImpl implements BoardService {
 
 	@Autowired
-	private BoardMapper mapper;
-
+	BoardMapper mapper;
+	
 	@Override
-	public List<BoardVO> list() {
+	public List<BoardVO> get() {
 		return mapper.getList();
 	}
 
 	@Override
-	public BoardVO get(Long bno) {
+	public BoardVO read(int bno) {
 		return mapper.read(bno);
 	}
 
 	@Override
-	public void create(BoardVO board) {
-			mapper.insert(board);
-			
+	public String add(BoardVO board) {
+		return mapper.insert(board);
 	}
 
 	@Override
-	public boolean drop(Long bno) {
-		return mapper.delete(bno)==1;
+	public int remove(int bno) {
+		return mapper.remove(bno);
 	}
-	
+
 }
